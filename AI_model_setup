@@ -1,0 +1,200 @@
+# Setup and Execution for the AI Model
+
+## Step 1 – Download the MNIST Dataset
+
+Download the MNIST PNG dataset from:
+
+https://www.kaggle.com/datasets/alexanderyyy/mnist-png
+
+---
+
+## Step 2 – Extract the Dataset
+
+Extract the downloaded ZIP file.
+
+Inside it, locate the following folders:
+
+- `train`
+- `test`
+
+---
+
+## Step 3 – Create a New Arduino App Lab Project
+
+1. Open **Arduino App Lab**.
+2. Create a **New App**.
+3. Go to the **Image Classification** brick.
+
+---
+
+## Step 4 – Create a New AI Model
+
+1. Open the **Image Classification** brick.
+2. Select **AI Models**.
+3. Click **Train New AI Model**.
+4. Click **OK, Let's Start** on the pop-up.
+5. Click **Arduino Sign In**.
+6. Sign in using your Arduino account (or create one if you don't have one).
+7. Click **Connect to Edge Impulse Studio**.
+8. Log in using the same Arduino account.
+
+---
+
+## Step 5 – Create an Edge Impulse Project
+
+1. Click **Create New Project**.
+2. Enter a project name.
+3. Select:
+
+- **Project Type:** Personal
+- **Project Setting:** Public
+
+---
+
+## Step 6 – Open the Data Upload Page
+
+1. From the Edge Impulse dashboard, click **Add Existing Data**.
+2. Click **Upload Data**.
+
+---
+
+## Step 7 – Upload the Training Dataset
+
+Repeat the following steps for every digit folder (`0` to `9`) inside the **train** folder.
+
+1. Click **Select a Folder**.
+2. Click **Choose Files**.
+3. Select the folder named **0** from the **train** directory.
+4. Under **Automatically split between training and test**, choose **Train**.
+5. Under **Label Option**, enter **0**:
+6. Click **Upload Data**.
+7. Wait for the upload to complete.
+
+Repeat the same process for folders:
+
+- 1
+- 2
+- 3
+- 4
+- 5
+- 6
+- 7
+- 8
+- 9
+
+using the corresponding label.
+
+---
+
+## Step 8 – Upload the Test Dataset
+
+Repeat **Step 7** for every folder (`0` to `9`) inside the **test** folder.
+
+This time:
+
+- Select **Test** under **Automatically split between training and test**
+- Enter the corresponding digit in the **Label Option**
+
+---
+
+## Step 9 – Create the Impulse
+
+From the left sidebar:
+
+1. Click **Create Impulse**.
+
+Configure the following:
+
+| Parameter | Value |
+|----------|-------|
+| Image Width | 28 |
+| Image Height | 28 |
+| Resize Mode | Squash |
+
+### Add Processing Block
+
+- Image
+
+### Add Learning Block
+
+- Classification
+
+The output features should display:
+
+```
+10 (0, 1, 2, 3, 4, 5, 6, 7, 8, 9)
+```
+
+Click **Save Impulse**.
+
+---
+
+## Step 10 – Configure Image Processing
+
+From the left sidebar:
+
+1. Click **Image**.
+
+Set:
+
+- **Color Depth:** Greyscale
+
+Click:
+
+- **Save Parameters**
+
+Wait until processing finishes.
+
+Then click:
+
+- **Save and Train**
+
+Wait for the model training to complete.
+
+---
+
+## Step 11 – Test the Model
+
+From the left sidebar:
+
+1. Click **Live Classification**.
+2. Click **Start Sampling**.
+
+Verify that the model correctly predicts handwritten digits.
+
+---
+
+## Step 12 – Deploy the Model
+
+Deploy the trained model using either of the following:
+
+- **Unoptimized (Float32)** *(Recommended for better accuracy)*
+- **Quantized (INT8)** *(Recommended if memory usage is a concern)*
+
+---
+
+## Step 13 – Install the Model in Arduino App Lab
+
+Return to **Arduino App Lab**.
+
+Inside the **Image Classification** brick:
+
+1. Open the list of AI Models.
+2. Your newly trained model will appear.
+3. Install the model.
+4. Add the Image Classification brick to your project.
+
+---
+
+## Step 14 – Upload and Run the Project
+
+1. Open this project in Arduino App Lab.
+2. Upload the Arduino sketch to the **Arduino Uno Q**.
+3. Run the App Lab project.
+4. Open the generated Web UI.
+5. Draw a handwritten digit (0–9).
+6. Click **Predict Digit**.
+7. The prediction will be displayed on the webpage.
+8. The same digit will appear on the Arduino Uno Q LED Matrix.
+
+---
