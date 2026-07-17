@@ -37,6 +37,15 @@ A user draws a handwritten digit (0–9) on a web-based canvas. The drawing is s
 
 ---
 
+## 📸 Demo
+
+### Web Interface
+![Webpage screenshot](screenshots/webpage.png)
+
+### LED Matrix Output
+![Output screenshot](screenshots/ledmatrix.jpg)
+---
+
 ## 🏗️Project Structure
 
 ```text
