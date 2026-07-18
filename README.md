@@ -21,7 +21,7 @@ A user draws a handwritten digit (0–9) on a web-based canvas. The drawing is s
 ## Hardware Required
 
 - Arduino Uno Q
-- USB cable
+- USB Type-C cable
 - Computer
 
 ---
