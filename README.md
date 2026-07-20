@@ -51,14 +51,14 @@ A user draws a handwritten digit (0–9) on a web-based canvas. The drawing is s
 ```text
 .
 ├── assests
-    ├──index.html               # Web interface
-    ├── style.css               # Styling
-    ├── app.js                  # Frontend logic
+    ├──index.html          # Web interface
+    └──style.css           # Styling
+    └──app.js              # Frontend logic
 ├── python
-    ├──main.py                  # Python backend
+    ├──main.py             # Python backend
 ├── sketch
-    ├──digits.h                 # LED matrix digit bitmaps
-    └── Arduino Sketch (.ino)   # Arduino program
+    ├──sketch.ino          # Arduino program 
+    └──digits.h            # LED matrix digit bitmaps
 ```
 
 ---
