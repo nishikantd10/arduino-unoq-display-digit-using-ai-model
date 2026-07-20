@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Digit Recognition</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+  <body>
+    <div class="container">
+      <h1>Arduino Uno Q</h1>
+      <h2>AI Digit Recognition</h2>
+
+      <canvas id="drawCanvas" width="280" height="280"></canvas>
+
+      <div class="buttons">
+        <button id="predictBtn">
+          Predict Digit
+        </button>
+
+        <button id="clearBtn">
+            Clear
+        </button>
+      </div>
+
+      <p id="status">
+          Draw a digit (0-9)
+      </p>
+    </div>
+    <script src="libs/socket.io.min.js"></script>
+    <script src="libs/arduino.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
